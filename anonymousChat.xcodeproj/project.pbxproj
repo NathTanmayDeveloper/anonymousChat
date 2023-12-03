@@ -13,9 +13,12 @@
 		09406FDD2B1CCD8B00FF0BD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09406FDB2B1CCD8B00FF0BD5 /* Main.storyboard */; };
 		09406FDF2B1CCD8D00FF0BD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09406FDE2B1CCD8D00FF0BD5 /* Assets.xcassets */; };
 		09406FE22B1CCD8D00FF0BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09406FE02B1CCD8D00FF0BD5 /* LaunchScreen.storyboard */; };
+		09406FEA2B1CD7AC00FF0BD5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09406FE92B1CD7AC00FF0BD5 /* GoogleService-Info.plist */; };
+		B6DF26B9561E291B16F55CFA /* Pods_anonymousChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5828AE10BCB3B307C10054EA /* Pods_anonymousChat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05ABD8C37CE9E1441275EF78 /* Pods-anonymousChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anonymousChat.release.xcconfig"; path = "Target Support Files/Pods-anonymousChat/Pods-anonymousChat.release.xcconfig"; sourceTree = "<group>"; };
 		09406FD22B1CCD8B00FF0BD5 /* anonymousChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = anonymousChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09406FD52B1CCD8B00FF0BD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09406FD72B1CCD8B00FF0BD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		09406FDE2B1CCD8D00FF0BD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09406FE12B1CCD8D00FF0BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09406FE32B1CCD8D00FF0BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09406FE92B1CD7AC00FF0BD5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5828AE10BCB3B307C10054EA /* Pods_anonymousChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_anonymousChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87DDAACC3459C64B0C40E262 /* Pods-anonymousChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anonymousChat.debug.xcconfig"; path = "Target Support Files/Pods-anonymousChat/Pods-anonymousChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DF26B9561E291B16F55CFA /* Pods_anonymousChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				09406FD42B1CCD8B00FF0BD5 /* anonymousChat */,
 				09406FD32B1CCD8B00FF0BD5 /* Products */,
+				22C00C06C4ECACC50B770CC7 /* Pods */,
+				923021C07DF94F0D8AB3F114 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +72,26 @@
 				09406FDE2B1CCD8D00FF0BD5 /* Assets.xcassets */,
 				09406FE02B1CCD8D00FF0BD5 /* LaunchScreen.storyboard */,
 				09406FE32B1CCD8D00FF0BD5 /* Info.plist */,
+				09406FE92B1CD7AC00FF0BD5 /* GoogleService-Info.plist */,
 			);
 			path = anonymousChat;
+			sourceTree = "<group>";
+		};
+		22C00C06C4ECACC50B770CC7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87DDAACC3459C64B0C40E262 /* Pods-anonymousChat.debug.xcconfig */,
+				05ABD8C37CE9E1441275EF78 /* Pods-anonymousChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		923021C07DF94F0D8AB3F114 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5828AE10BCB3B307C10054EA /* Pods_anonymousChat.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09406FE62B1CCD8D00FF0BD5 /* Build configuration list for PBXNativeTarget "anonymousChat" */;
 			buildPhases = (
+				89DD71C9174CB61856138BB9 /* [CP] Check Pods Manifest.lock */,
 				09406FCE2B1CCD8B00FF0BD5 /* Sources */,
 				09406FCF2B1CCD8B00FF0BD5 /* Frameworks */,
 				09406FD02B1CCD8B00FF0BD5 /* Resources */,
+				A0BE8839F6F42B7ADF2429F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				09406FE22B1CCD8D00FF0BD5 /* LaunchScreen.storyboard in Resources */,
+				09406FEA2B1CD7AC00FF0BD5 /* GoogleService-Info.plist in Resources */,
 				09406FDF2B1CCD8D00FF0BD5 /* Assets.xcassets in Resources */,
 				09406FDD2B1CCD8B00FF0BD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89DD71C9174CB61856138BB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-anonymousChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0BE8839F6F42B7ADF2429F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-anonymousChat/Pods-anonymousChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-anonymousChat/Pods-anonymousChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-anonymousChat/Pods-anonymousChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09406FCE2B1CCD8B00FF0BD5 /* Sources */ = {
@@ -287,12 +359,14 @@
 		};
 		09406FE72B1CCD8D00FF0BD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DDAACC3459C64B0C40E262 /* Pods-anonymousChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A28838P5S7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = anonymousChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -315,12 +389,14 @@
 		};
 		09406FE82B1CCD8D00FF0BD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05ABD8C37CE9E1441275EF78 /* Pods-anonymousChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A28838P5S7;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = anonymousChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
