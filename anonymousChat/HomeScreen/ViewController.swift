@@ -21,6 +21,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func createNewButtonPressed(_ sender: UIButton) {
+        navigationController?.navigationBar.backgroundColor = .brown
+        navigationController?.navigationBar.tintColor = .label
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        let chatVc = ChatRoomViewController(nibName: "ChatRoomViewController", bundle: nil)
+        chatVc.roomId = "123"
+        navigationController?.pushViewController(chatVc, animated: true)
     }
     
 }
