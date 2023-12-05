@@ -23,7 +23,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func createNewButtonPressed(_ sender: UIButton) {
-        openChatRoom(withRoomId: generateRandomRoomId())
+        let roomId = generateRandomRoomId()
+        DatabaseHelper.shared.createRoom(roomId: roomId)
+        openChatRoom(withRoomId: roomId)
     }
     
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ChatRoomViewController: UIViewController {
     
@@ -32,9 +33,9 @@ class ChatRoomViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadMessages()
         tableView.reloadData()
         messageTextField.becomeFirstResponder()
+        observeDataBaseValue()
     }
     
     private func setNavigationBar() {
@@ -48,20 +49,38 @@ class ChatRoomViewController: UIViewController {
         tableView.register(UINib(nibName: "OthersMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "OthersMessageTableViewCell")
     }
     
-    private func loadMessages() {
-        messages = [MessageModel(senderName: "Me", message: "Hiiakldklda adskdaklad adldalkadads laldas ad", time: "22:08"), MessageModel(senderName: "You", message: "Hii", time: "22:08"), MessageModel(senderName: "Me", message: "Hii", time: "22:08"), MessageModel(senderName: "You", message: "Hii", time: "22:08"), MessageModel(senderName: "Me", message: "Hii", time: "22:08"), MessageModel(senderName: "You", message: "Hii", time: "22:08")]
-    }
-    
     private var myName: String {
-        return "Me"
+        return UserRepository.shared.userName ?? ""
     }
     
     @IBAction func snedButtonPressed(_ sender: UIButton) {
         guard let messageText = messageTextField.text else {return}
         let newMessage = MessageModel(senderName: myName, message: messageText, time: "22.08")
-        messages.append(newMessage)
+        var messagesCopy = messages
+        messagesCopy.append(newMessage)
+        DatabaseHelper.shared.updatedMessagesInto(roomId: roomId, updatedMessages: messagesCopy)
+        checkForMessageAndScrollToBottomIfNeeded()
+    }
+    
+    func checkForMessageAndScrollToBottomIfNeeded() {
         tableView.reloadData()
-        tableView.scrollToRow(at: IndexPath(row: messages.count-1, section: 0), at: .bottom, animated: true)
+        if (messages.count > 0) {
+            tableView.scrollToRow(at: IndexPath(row: messages.count-1, section: 0), at: .bottom, animated: true)
+        }
+    }
+    
+    func observeDataBaseValue() {
+        let ref = Database.database().reference()
+        let refHandle = ref.observe(DataEventType.value, with: { snapshot in
+            let dictValue = snapshot.value as! NSDictionary
+            let userDetails = dictValue["users"] as! NSDictionary
+            let messagesDetails = userDetails[self.roomId] as! NSDictionary
+            var lastAddedMessageDetail = messagesDetails[String(self.messages.count)] as? NSDictionary
+            if let lastAddedMessageDetail = lastAddedMessageDetail {
+                self.messages.append(MessageModel(senderName: lastAddedMessageDetail["sender"] as! String, message: lastAddedMessageDetail["message"] as! String, time: "0"))
+                self.checkForMessageAndScrollToBottomIfNeeded()
+            }
+        })
     }
 }
 
