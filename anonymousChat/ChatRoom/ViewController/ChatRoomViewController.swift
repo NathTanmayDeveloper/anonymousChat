@@ -75,11 +75,17 @@ class ChatRoomViewController: UIViewController {
             guard let dictValue = snapshot.value as? NSDictionary else {return}
             guard let userDetails = dictValue["users"] as? NSDictionary else {return}
             guard let messagesDetails = userDetails[self.roomId] as? NSDictionary else {return}
-            var lastAddedMessageDetail = messagesDetails[String(self.messages.count)] as? NSDictionary
-            if let lastAddedMessageDetail = lastAddedMessageDetail {
-                self.messages.append(MessageModel(senderName: lastAddedMessageDetail["sender"] as! String, message: lastAddedMessageDetail["message"] as! String, time: "0"))
-                self.checkForMessageAndScrollToBottomIfNeeded()
+            var i = 0
+            self.messages = []
+            while messagesDetails[String(i)] as? NSDictionary != nil {
+                if let currentAddedMessage = messagesDetails[String(i)] as? NSDictionary {
+                    self.messages.append(MessageModel(senderName: currentAddedMessage["sender"] as! String, message: currentAddedMessage["message"] as! String, time: "0"))
+                    i = i + 1
+                } else {
+                    break
+                }
             }
+            self.checkForMessageAndScrollToBottomIfNeeded()
         })
     }
 }
