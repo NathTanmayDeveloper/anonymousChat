@@ -96,7 +96,7 @@ extension ChatRoomViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if messages[indexPath.row].senderName == "Me" {
+        if messages[indexPath.row].senderName == self.myName {
             return getMyMessageCell(tableView, cellForRowAt: indexPath)
         } else {
             return getOthersMessageCell(tableView, cellForRowAt: indexPath)

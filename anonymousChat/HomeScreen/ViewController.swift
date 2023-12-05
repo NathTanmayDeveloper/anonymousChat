@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func joinButtonPressed(_ sender: UIButton) {
-        guard let roomId = joinTextField.text, !roomId.isEmpty else { return }
+        guard let roomId = joinTextField.text, !roomId.isEmpty, let userName = nameTextField.text, !userName.isEmpty else { return }
+        UserRepository.shared.userName = userName
         DatabaseHelper.shared.checkForIfRoomNumberExists(roomId: roomId) { isRoomExists in
             if isRoomExists {
                 self.openChatRoom(withRoomId: roomId)
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func createNewButtonPressed(_ sender: UIButton) {
+        guard let userName = nameTextField.text, !userName.isEmpty else { return }
+        UserRepository.shared.userName = userName
         let roomId = generateRandomRoomId()
         DatabaseHelper.shared.createRoom(roomId: roomId)
         openChatRoom(withRoomId: roomId)
