@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zHd-MB-qfs" userLabel="messageView">
-                        <rect key="frame" x="96" y="8" width="224" height="28"/>
+                        <rect key="frame" x="88" y="8" width="224" height="28"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my message" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNY-8l-hNA" userLabel="messageLabel">
                                 <rect key="frame" x="8" y="8" width="208" height="12"/>
@@ -39,7 +39,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="zHd-MB-qfs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="F0D-Ng-mBW"/>
-                    <constraint firstAttribute="trailing" secondItem="zHd-MB-qfs" secondAttribute="trailing" id="I7u-ia-8yD"/>
+                    <constraint firstAttribute="trailing" secondItem="zHd-MB-qfs" secondAttribute="trailing" constant="8" id="I7u-ia-8yD"/>
                     <constraint firstItem="zHd-MB-qfs" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.7" id="Ukg-XE-zQI"/>
                     <constraint firstAttribute="bottom" secondItem="zHd-MB-qfs" secondAttribute="bottom" constant="8" id="sPT-bz-cwz"/>
                 </constraints>

@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLc-2J-tj8" userLabel="messageView">
-                        <rect key="frame" x="0.0" y="8" width="224" height="28"/>
+                        <rect key="frame" x="8" y="8" width="224" height="28"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my message" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOe-BP-3nY" userLabel="messageLabel">
                                 <rect key="frame" x="8" y="8" width="208" height="12"/>
@@ -39,7 +39,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="RLc-2J-tj8" secondAttribute="bottom" constant="8" id="FUR-JY-ek0"/>
-                    <constraint firstItem="RLc-2J-tj8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fVU-sp-bDU"/>
+                    <constraint firstItem="RLc-2J-tj8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fVU-sp-bDU"/>
                     <constraint firstItem="RLc-2J-tj8" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.7" id="iqR-aL-8li"/>
                     <constraint firstItem="RLc-2J-tj8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="jp4-ki-8q0"/>
                 </constraints>
