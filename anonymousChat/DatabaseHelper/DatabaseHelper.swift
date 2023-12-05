@@ -25,4 +25,18 @@ class DatabaseHelper {
         print("data to add: \(data)")
         self.ref.child("users").child(roomId).setValue(data)
     }
+    
+    func checkForIfRoomNumberExists(roomId: String, completion: @escaping ((Bool) -> Void)) {
+        self.ref.child("users").child(roomId).getData { error, snapshot in
+            guard let dictValue = snapshot?.value as? NSDictionary else {
+                completion(false)
+                return
+            }
+            guard let firstMessage = dictValue["-1"] as? NSDictionary else {
+                completion(false)
+                return
+            }
+            completion(true)
+        }
+    }
 }

@@ -17,8 +17,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func joinButtonPressed(_ sender: UIButton) {
-        guard let roomId = joinTextField.text else { return }
-        openChatRoom(withRoomId: roomId)
+        guard let roomId = joinTextField.text, !roomId.isEmpty else { return }
+        DatabaseHelper.shared.checkForIfRoomNumberExists(roomId: roomId) { isRoomExists in
+            if isRoomExists {
+                self.openChatRoom(withRoomId: roomId)
+            }
+        }
     }
     
     

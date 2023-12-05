@@ -72,9 +72,9 @@ class ChatRoomViewController: UIViewController {
     func observeDataBaseValue() {
         let ref = Database.database().reference()
         let refHandle = ref.observe(DataEventType.value, with: { snapshot in
-            let dictValue = snapshot.value as! NSDictionary
-            let userDetails = dictValue["users"] as! NSDictionary
-            let messagesDetails = userDetails[self.roomId] as! NSDictionary
+            guard let dictValue = snapshot.value as? NSDictionary else {return}
+            guard let userDetails = dictValue["users"] as? NSDictionary else {return}
+            guard let messagesDetails = userDetails[self.roomId] as? NSDictionary else {return}
             var lastAddedMessageDetail = messagesDetails[String(self.messages.count)] as? NSDictionary
             if let lastAddedMessageDetail = lastAddedMessageDetail {
                 self.messages.append(MessageModel(senderName: lastAddedMessageDetail["sender"] as! String, message: lastAddedMessageDetail["message"] as! String, time: "0"))
