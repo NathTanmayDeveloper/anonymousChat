@@ -8,16 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var joinTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func joinButtonPressed(_ sender: UIButton) {
-        guard let roomId = joinTextField.text, !roomId.isEmpty, let userName = nameTextField.text, !userName.isEmpty else { return }
+        guard let roomId = joinTextField.text, !roomId.isEmpty else {
+            joinTextField.addShakingAnimation(duration: 0.5, displacement: 15)
+            return
+        }
+        
+        guard let userName = nameTextField.text, !userName.isEmpty else {
+            nameTextField.addShakingAnimation(duration: 0.5, displacement: 15)
+            return
+        }
+        
         UserRepository.shared.userName = userName
         DatabaseHelper.shared.checkForIfRoomNumberExists(roomId: roomId) { isRoomExists in
             if isRoomExists {
@@ -28,7 +37,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func createNewButtonPressed(_ sender: UIButton) {
-        guard let userName = nameTextField.text, !userName.isEmpty else { return }
+        guard let userName = nameTextField.text, !userName.isEmpty else {
+            nameTextField.addShakingAnimation(duration: 0.5, displacement: 15)
+            return }
         UserRepository.shared.userName = userName
         let roomId = generateRandomRoomId()
         DatabaseHelper.shared.createRoom(roomId: roomId)
@@ -50,4 +61,3 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(chatVc, animated: true)
     }
 }
-

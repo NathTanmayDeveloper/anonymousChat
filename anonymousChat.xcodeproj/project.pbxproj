@@ -23,6 +23,7 @@
 		09A8A8C02B1CE5FA00BA0D6F /* MyMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A8A8BE2B1CE5FA00BA0D6F /* MyMessageTableViewCell.xib */; };
 		09A8A8C32B1CE61000BA0D6F /* OthersMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A8A8C12B1CE61000BA0D6F /* OthersMessageTableViewCell.swift */; };
 		09A8A8C42B1CE61000BA0D6F /* OthersMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A8A8C22B1CE61000BA0D6F /* OthersMessageTableViewCell.xib */; };
+		09D89DE62B20F07B002ECC5A /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D89DE52B20F07B002ECC5A /* UITextFieldExtensions.swift */; };
 		B6DF26B9561E291B16F55CFA /* Pods_anonymousChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5828AE10BCB3B307C10054EA /* Pods_anonymousChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		09A8A8BE2B1CE5FA00BA0D6F /* MyMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMessageTableViewCell.xib; sourceTree = "<group>"; };
 		09A8A8C12B1CE61000BA0D6F /* OthersMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersMessageTableViewCell.swift; sourceTree = "<group>"; };
 		09A8A8C22B1CE61000BA0D6F /* OthersMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OthersMessageTableViewCell.xib; sourceTree = "<group>"; };
+		09D89DE52B20F07B002ECC5A /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		5828AE10BCB3B307C10054EA /* Pods_anonymousChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_anonymousChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87DDAACC3459C64B0C40E262 /* Pods-anonymousChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-anonymousChat.debug.xcconfig"; path = "Target Support Files/Pods-anonymousChat/Pods-anonymousChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 		09406FD42B1CCD8B00FF0BD5 /* anonymousChat */ = {
 			isa = PBXGroup;
 			children = (
+				09D89DE42B20F060002ECC5A /* Utility */,
 				09672B382B1F8B0C0078C618 /* DatabaseHelper */,
 				09A8A8B32B1CE50300BA0D6F /* ChatRoom */,
 				09A8A8B22B1CE2BC00BA0D6F /* HomeScreen */,
@@ -150,6 +153,14 @@
 				09A8A8C22B1CE61000BA0D6F /* OthersMessageTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		09D89DE42B20F060002ECC5A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				09D89DE52B20F07B002ECC5A /* UITextFieldExtensions.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		22C00C06C4ECACC50B770CC7 /* Pods */ = {
@@ -295,6 +306,7 @@
 				09A8A8BF2B1CE5FA00BA0D6F /* MyMessageTableViewCell.swift in Sources */,
 				09672B3A2B1F8B240078C618 /* DatabaseHelper.swift in Sources */,
 				09A8A8C32B1CE61000BA0D6F /* OthersMessageTableViewCell.swift in Sources */,
+				09D89DE62B20F07B002ECC5A /* UITextFieldExtensions.swift in Sources */,
 				09406FD82B1CCD8B00FF0BD5 /* SceneDelegate.swift in Sources */,
 				09A8A8B72B1CE52800BA0D6F /* ChatRoomViewController.swift in Sources */,
 			);
