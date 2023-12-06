@@ -107,7 +107,7 @@ extension ChatRoomViewController: UITableViewDataSource {
     private func getMyMessageCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyMessageTableViewCell", for: indexPath) as? MyMessageTableViewCell
         if let cell = cell {
-            cell.configure(message: messages[indexPath.row].message)
+            cell.configure(message: messages[indexPath.row].message, senderName: messages[indexPath.row].senderName)
             return cell
         } else {
             return UITableViewCell()
@@ -117,7 +117,7 @@ extension ChatRoomViewController: UITableViewDataSource {
     private func getOthersMessageCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OthersMessageTableViewCell", for: indexPath) as? OthersMessageTableViewCell
         if let cell = cell {
-            cell.configure(message: messages[indexPath.row].message)
+            cell.configure(message: messages[indexPath.row].message, senderName: messages[indexPath.row].senderName)
             return cell
         } else {
             return UITableViewCell()

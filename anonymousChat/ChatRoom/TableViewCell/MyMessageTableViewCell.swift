@@ -9,6 +9,7 @@ import UIKit
 
 class MyMessageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var senderLabel: UILabel!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
     override func awakeFromNib() {
@@ -17,7 +18,8 @@ class MyMessageTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func configure(message: String) {
+    func configure(message: String, senderName: String) {
         messageLabel.text = message
+        senderLabel.text = senderName
     }
 }
